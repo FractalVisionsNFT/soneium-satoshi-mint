@@ -64,10 +64,11 @@ export function NftMint(props: Props) {
     console.error("Invalid pricePerToken");
     return null;
   }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <div className="absolute top-4 right-4">
-        <ConnectButton client={client} />
+        <ConnectButton client={client} theme={"dark"} />
       </div>
 
       {/* <Button
@@ -83,8 +84,8 @@ export function NftMint(props: Props) {
 					<Moon className="h-[1.2rem] w-[1.2rem]" />
 				)}
 			</Button> */}
-      <Card className="w-full max-w-md">
-        <CardContent className="pt-6">
+      <Card className="w-full max-w-md bg-gray-900">
+        <CardContent className="pt-6 text-white">
           <div className="aspect-square overflow-hidden rounded-lg mb-4 relative">
             {props.isERC1155 ? (
               <NFT contract={props.contract} tokenId={props.tokenId}>
@@ -100,7 +101,9 @@ export function NftMint(props: Props) {
                 className="w-full h-full object-cover"
                 alt=""
                 src={
-                  props.contractImage || "/placeholder.svg?height=400&width=400"
+                  // props?.contractImage ||
+                  "ipfs://bafybeibvxs7xj3zwzmvyfoblwudzgvv64exl4x2w4wz6dhpi2egvfcwwa4/ss.jpg"
+                  // "/placeholder.svg?height=400&width=400"
                 }
               />
             )}
@@ -108,12 +111,10 @@ export function NftMint(props: Props) {
               {props.pricePerToken} {props.currencySymbol}/each
             </div>
           </div>
-          <h2 className="text-2xl font-bold mb-2 dark:text-white">
+          <h2 className="text-2xl font-bold mb-2 text-white">
             {props.displayName}
           </h2>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            {props.description}
-          </p>
+          <p className=" text-white mb-4">{props.description}</p>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center">
               <Button
@@ -122,7 +123,7 @@ export function NftMint(props: Props) {
                 onClick={decreaseQuantity}
                 disabled={quantity <= 1}
                 aria-label="Decrease quantity"
-                className="rounded-r-none"
+                className="rounded-r-none bg-black text-white"
               >
                 <Minus className="h-4 w-4" />
               </Button>
@@ -130,7 +131,7 @@ export function NftMint(props: Props) {
                 type="number"
                 value={quantity}
                 onChange={handleQuantityChange}
-                className="w-24 text-center rounded-none border-x-0 pl-6"
+                className="w-24 text-center rounded-none border-x-0 pl-6 bg-black text-white"
                 min="1"
                 max="10"
               />
@@ -140,7 +141,7 @@ export function NftMint(props: Props) {
                 onClick={increaseQuantity}
                 disabled={quantity >= 10}
                 aria-label="Increase quantity"
-                className="rounded-l-none"
+                className="rounded-l-none bg-black text-white"
               >
                 <Plus className="h-4 w-4" />
               </Button>
@@ -165,14 +166,14 @@ export function NftMint(props: Props) {
 						</Label>
 					</div> */}
           {useCustomAddress && (
-            <div className="mb-4">
+            <div className="mb-4 bg-inherit">
               <Input
                 id="address-input"
                 type="text"
                 placeholder="Enter recipient address"
                 value={customAddress}
                 onChange={(e) => setCustomAddress(e.target.value)}
-                className="w-full"
+                className="w-full text-white bg-gray-900"
               />
             </div>
           )}
@@ -194,8 +195,8 @@ export function NftMint(props: Props) {
                   : { type: "ERC721", quantity: BigInt(quantity) }
               }
               style={{
-                backgroundColor: "black",
-                color: "white",
+                backgroundColor: "white",
+                color: "black",
                 width: "100%",
               }}
               disabled={isMinting}
@@ -203,7 +204,9 @@ export function NftMint(props: Props) {
               onTransactionConfirmed={() =>
                 toast.success("Minted successfully")
               }
-              onError={(err) => toast.error(err.message)}
+              onError={(err) => {
+                toast.error(err.message);
+              }}
             >
               Mint {quantity} NFT{quantity > 1 ? "s" : ""}
             </ClaimButton>

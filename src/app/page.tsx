@@ -82,7 +82,7 @@ export default function Home() {
     <NftMint
       contract={contract}
       displayName={displayName || ""}
-      contractImage={contractMetadataQuery.data?.image || ""}
+      contractImage={contractMetadataQuery?.data?.image || ""}
       description={description || ""}
       currencySymbol={currencySymbol}
       pricePerToken={pricePerToken}
