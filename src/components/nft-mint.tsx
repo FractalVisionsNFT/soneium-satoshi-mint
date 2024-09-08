@@ -223,7 +223,7 @@ export function NftMint(props: Props) {
             />
           )}
         </CardFooter>
-
+        {/* 
         <CardFooter>
           <a
             href="https://blastapi.io/faucets/super-seed-sepolia"
@@ -233,7 +233,7 @@ export function NftMint(props: Props) {
           >
             Click here to get Superseed Sepolia ETH.
           </a>
-        </CardFooter>
+        </CardFooter> */}
       </Card>
       {true && (
         <Toast className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-md">
