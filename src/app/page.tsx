@@ -13,11 +13,13 @@ import {
   getActiveClaimCondition as getActiveClaimCondition1155,
   getNFT,
   isERC1155,
+  totalSupply as totalSupply1155,
 } from "thirdweb/extensions/erc1155";
 import { getCurrencyMetadata } from "thirdweb/extensions/erc20";
 import {
   getActiveClaimCondition as getActiveClaimCondition721,
   isERC721,
+  getTotalClaimedSupply,
 } from "thirdweb/extensions/erc721";
 import { useReadContract } from "thirdweb/react";
 
@@ -78,6 +80,27 @@ export default function Home() {
       ? Number(toTokens(priceInWei, currencyMetadata.data.decimals))
       : 0.005;
 
+  const _totalSupply1155 = useReadContract(totalSupply1155, {
+    contract: contract,
+    id: tokenId,
+    queryOptions: {
+      enabled: isERC1155Query.data,
+    },
+  });
+
+  const _totalSupply721 = useReadContract(getTotalClaimedSupply, {
+    contract: contract,
+    queryOptions: {
+      enabled: isERC721Query.data,
+    },
+  });
+
+  const totalSupply = isERC1155Query.data
+    ? _totalSupply1155.data
+    : isERC721Query.data
+    ? _totalSupply721.data
+    : null;
+
   return (
     <NftMint
       contract={contract}
@@ -88,6 +111,7 @@ export default function Home() {
       pricePerToken={pricePerToken}
       isERC1155={!!isERC1155Query.data}
       tokenId={tokenId}
+      totalSupply={totalSupply}
     />
   );
 }

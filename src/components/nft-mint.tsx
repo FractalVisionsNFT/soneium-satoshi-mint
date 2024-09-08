@@ -31,6 +31,7 @@ type Props = {
   currencySymbol: string | null;
   isERC1155: boolean;
   tokenId: bigint;
+  totalSupply: bigint | undefined | null;
 };
 
 export function NftMint(props: Props) {
@@ -226,6 +227,12 @@ export function NftMint(props: Props) {
               connectButton={{ style: { width: "100%" } }}
             />
           )}
+        </CardFooter>
+
+        <CardFooter>
+          <p className="w-full text-[#bb20bc] italic text-center">
+            Claimed: {props.totalSupply ? Number(props.totalSupply) : null}
+          </p>
         </CardFooter>
         {/* 
         <CardFooter>
