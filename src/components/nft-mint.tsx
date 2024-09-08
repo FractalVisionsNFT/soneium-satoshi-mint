@@ -188,8 +188,8 @@ export function NftMint(props: Props) {
                 props.isERC1155
                   ? {
                       type: "ERC1155",
-                      tokenId: props.tokenId,
-                      quantity: BigInt(quantity),
+                      tokenId: BigInt(0),
+                      quantity: BigInt(1),
                     }
                   : { type: "ERC721", quantity: BigInt(quantity) }
               }
