@@ -72,7 +72,7 @@ export function NftMint(props: Props) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
-      <div className="absolute top-4 right-4">
+      <div className="block w-max mx-auto mb-4 p-3 lg:absolute top-4 right-4">
         <ConnectButton client={client} theme={"dark"} />
       </div>
 
@@ -115,12 +115,12 @@ export function NftMint(props: Props) {
               {props.pricePerToken} {props.currencySymbol}/each
             </div>
           </div>
-          <h2 className="text-2xl font-bold mb-2 text-white">
+          <h2 className="text-2xl font-bold mb-2 text-white w-[90%] mx-auto text-center">
             {props.displayName}
           </h2>
           <p className=" text-white mb-4">{props.description}</p>
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center">
+          <div className="flex items-center justify-between flex-wrap mb-4">
+            <div className="flex items-center mb-3 lg:mb-0">
               <Button
                 variant="outline"
                 size="icon"
@@ -150,6 +150,7 @@ export function NftMint(props: Props) {
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
+
             <div className="text-base pr-1 font-semibold dark:text-white">
               Total: {props.pricePerToken * quantity} {props.currencySymbol}
             </div>
