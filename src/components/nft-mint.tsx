@@ -185,7 +185,7 @@ export function NftMint(props: Props) {
         <CardFooter>
           {account ? (
             <ClaimButton
-              theme={"light"}
+              theme={"dark"}
               contractAddress={props.contract.address}
               chain={props.contract.chain}
               client={props.contract.client}
@@ -199,8 +199,8 @@ export function NftMint(props: Props) {
                   : { type: "ERC721", quantity: BigInt(quantity) }
               }
               style={{
-                backgroundColor: "white",
-                color: "black",
+                // backgroundColor: "white",
+                // color: "black",
                 width: "100%",
               }}
               disabled={isMinting}
