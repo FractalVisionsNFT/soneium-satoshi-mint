@@ -8,8 +8,8 @@ import { ToastProvider } from "@/components/ui/toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Fractal Visions NFT MInting",
-  description: "Fractal Visions - Superseed NFT Minting",
+  title: "Impact Initiative Launchpad",
+  description: "Fractal Visions - Superseed NFT Phase 2",
 };
 
 export default function RootLayout({
