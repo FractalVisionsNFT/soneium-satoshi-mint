@@ -71,9 +71,13 @@ export function NftMint(props: Props) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black transition-colors duration-200">
       <div className="block w-max mx-auto mb-4 p-3 lg:absolute top-4 right-4">
-        <ConnectButton client={client} theme={"dark"} />
+        <ConnectButton
+          client={client}
+          theme={"dark"}
+          // connectButton={{ style: { background: "#fff" } }}
+        />
       </div>
 
       {/* <Button
@@ -128,7 +132,7 @@ export function NftMint(props: Props) {
                 onClick={decreaseQuantity}
                 disabled={quantity <= 1}
                 aria-label="Decrease quantity"
-                className="rounded-r-none bg-black text-white"
+                className="rounded-r-none bg-gray-900 text-white"
               >
                 <Minus className="h-4 w-4" />
               </Button>
@@ -146,7 +150,7 @@ export function NftMint(props: Props) {
                 onClick={increaseQuantity}
                 disabled={quantity >= 10}
                 aria-label="Increase quantity"
-                className="rounded-l-none bg-black text-white"
+                className="rounded-l-none bg-gray-900 text-white"
               >
                 <Plus className="h-4 w-4" />
               </Button>
