@@ -231,7 +231,10 @@ export function NftMint(props: Props) {
 
         <CardFooter>
           <p className="w-full text-[#bb20bc] italic text-center">
-            Claimed: {props.totalSupply ? Number(props.totalSupply) : null}
+            Claimed:{" "}
+            {props.totalSupply
+              ? Number(props.totalSupply).toLocaleString()
+              : null}
           </p>
         </CardFooter>
         {/* 
