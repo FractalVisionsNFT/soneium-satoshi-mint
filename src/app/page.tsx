@@ -76,7 +76,7 @@ export default function Home() {
   const pricePerToken =
     currencyMetadata.data && priceInWei
       ? Number(toTokens(priceInWei, currencyMetadata.data.decimals))
-      : null;
+      : 0.005;
 
   return (
     <NftMint

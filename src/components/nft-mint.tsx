@@ -105,7 +105,7 @@ export function NftMint(props: Props) {
               />
             )}
             <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm font-semibold">
-              {/* {props.pricePerToken}  */}0 {props.currencySymbol}/each
+              {props.pricePerToken} {props.currencySymbol}/each
             </div>
           </div>
           <h2 className="text-2xl font-bold mb-2 dark:text-white">
