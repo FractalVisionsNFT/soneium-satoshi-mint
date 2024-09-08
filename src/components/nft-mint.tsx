@@ -7,7 +7,7 @@ import { Toast } from "@/components/ui/toast";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { Loader2, Minus, Plus, Moon, Sun } from "lucide-react";
+import { Loader2, Minus, Plus } from "lucide-react";
 import { useTheme } from "next-themes";
 import type { ThirdwebContract } from "thirdweb";
 import {
@@ -87,7 +87,7 @@ export function NftMint(props: Props) {
       <Card className="w-full max-w-md bg-gray-900">
         <CardContent className="pt-6 text-white">
           <div className="aspect-square overflow-hidden rounded-lg mb-4 relative">
-            {props.isERC1155 ? (
+            {props?.isERC1155 ? (
               <NFT contract={props.contract} tokenId={props.tokenId}>
                 <React.Suspense
                   fallback={<Skeleton className="w-full h-full object-cover" />}
@@ -101,9 +101,8 @@ export function NftMint(props: Props) {
                 className="w-full h-full object-cover"
                 alt=""
                 src={
-                  // props?.contractImage ||
-                  "ipfs://bafybeibvxs7xj3zwzmvyfoblwudzgvv64exl4x2w4wz6dhpi2egvfcwwa4/ss.jpg"
-                  // "/placeholder.svg?height=400&width=400"
+                  props?.contractImage ||
+                  "/placeholder.svg?height=400&width=400"
                 }
               />
             )}
