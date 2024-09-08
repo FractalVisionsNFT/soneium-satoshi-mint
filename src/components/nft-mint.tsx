@@ -65,6 +65,11 @@ export function NftMint(props: Props) {
     return null;
   }
 
+  if (!props.contract) {
+    console.error("Invalid contract");
+    throw new Error("No contract found");
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <div className="absolute top-4 right-4">
@@ -188,7 +193,7 @@ export function NftMint(props: Props) {
                 props.isERC1155
                   ? {
                       type: "ERC1155",
-                      tokenId: BigInt(0),
+                      tokenId: BigInt(props.tokenId),
                       quantity: BigInt(1),
                     }
                   : { type: "ERC721", quantity: BigInt(quantity) }
