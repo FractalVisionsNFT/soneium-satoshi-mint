@@ -4,7 +4,7 @@
 
 - If the clientId or secret key is to be edited, change it in the ``` .env.local``` file
 
-- Then, edit this file [here](./src/lib/thirdwebClient.ts) to the NFT contract address and NFT chain. The comments in this file will guide you.
+- Then, edit this file [here](./src/lib/constants.ts) to the NFT contract address and NFT chain. The comments in this file will guide you.
 
 - Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
