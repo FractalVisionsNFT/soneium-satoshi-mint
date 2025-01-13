@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Impact Initiative Launchpad",
-  description: "Fractal Visions - Superseed NFT Phase 2",
+  description: "Fractal Visions - Soneium Mint",
 };
 
 export default function RootLayout({

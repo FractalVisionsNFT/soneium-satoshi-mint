@@ -124,7 +124,11 @@ export function NftMint(props: Props) {
           <h2 className="text-2xl font-bold mb-2 text-white w-[85%] text-pretty">
             {props.displayName}
           </h2>
-          <p className=" text-white mb-4">{props.description}</p>
+          <p className=" text-white mb-4">
+            {props.description.length > 100
+              ? `${props.description.substring(0, 100)}...`
+              : props.description}
+          </p>
           <div className="flex items-center justify-between flex-wrap mb-4">
             <div className="flex items-center mb-3 lg:mb-0">
               <Button

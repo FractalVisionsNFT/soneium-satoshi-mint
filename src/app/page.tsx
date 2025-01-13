@@ -78,7 +78,7 @@ export default function Home() {
   const pricePerToken =
     currencyMetadata.data && priceInWei
       ? Number(toTokens(priceInWei, currencyMetadata.data.decimals))
-      : 0.005;
+      : 0.008;
 
   const _totalSupply1155 = useReadContract(totalSupply1155, {
     contract: contract,
