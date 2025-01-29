@@ -8,7 +8,7 @@ import { ToastProvider } from "@/components/ui/toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Impact Initiative Launchpad",
+  title: "Ethernauts #1",
   description: "Fractal Visions - Soneium Mint",
 };
 
