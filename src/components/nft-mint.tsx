@@ -116,9 +116,9 @@ export function NftMint(props: Props) {
                 }
               />
             )}
-            <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm font-semibold">
+            {/* <div className="absolute top-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full text-sm font-semibold">
               {props.pricePerToken} {props.currencySymbol}/each
-            </div>
+            </div> */}
           </div>
 
           <h2 className="text-2xl font-bold mb-2 text-white w-[85%] text-pretty">
@@ -161,9 +161,9 @@ export function NftMint(props: Props) {
               </Button>
             </div>
 
-            <div className="text-base pr-1 font-semibold dark:text-white">
+            {/* <div className="text-base pr-1 font-semibold dark:text-white">
               Total: {props.pricePerToken * quantity} {props.currencySymbol}
-            </div>
+            </div> */}
           </div>
 
           {/* Not ready yet - waiting for new release of the ClaimButton */}
